@@ -3,7 +3,7 @@ name: Node CI
 on:
   pull_request:
     branches: [main]
-# checkour bring you source code to vm
+# checkout bring you source code to vm
 jobs:
   test_pull_request:
     runs_on: ubuntu-latest
