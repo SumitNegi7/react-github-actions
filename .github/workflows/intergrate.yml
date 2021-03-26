@@ -1,6 +1,11 @@
 name: Node CI
 on:
-  pull_request
+  pull_request:
+    types:
+      - opened
+
+  schedule:
+    - cron: "*/5 * * * *"
 
 jobs:
   # This workflow contains a single job called "build"
@@ -38,7 +43,7 @@ jobs:
       - name: Start Redis
         uses: supercharge/redis-github-action@1.2.0
         with:
-        redis-version: ${{ matrix.redis-version }}    
+          redis-version: ${{ matrix.redis-version }}    
 
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
