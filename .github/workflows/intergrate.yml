@@ -1,11 +1,6 @@
 name: Node CI
 on:
-  pull_request:
-    types:
-      - opened
-
-  schedule:
-    - cron: "*/5 * * * *"
+  pull_request
 
 jobs:
   # This workflow contains a single job called "build"
