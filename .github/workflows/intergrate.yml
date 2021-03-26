@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        redis-version: 6
+        redis-version: [6]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
