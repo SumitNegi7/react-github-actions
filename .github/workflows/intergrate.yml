@@ -44,7 +44,7 @@ jobs:
         run: yarn
 
       - name: Cache Browsers
-        if: PLAYWRIGHT_BROWSERS_PATH=$HOME/pw-browsers yarn add playwright -D
+        run: PLAYWRIGHT_BROWSERS_PATH=$HOME/pw-browsers yarn add playwright -D
 
       - name: Use playwright actions
         uses: microsoft/playwright-github-action@v1
