@@ -6,4 +6,5 @@ const { firefox } = require('playwright');
   await page.goto('http://whatsmyuseragent.org/');
   await page.screenshot({ path: `example.png` });
   await browser.close();
+  console.log("Test run successfully..............")
 })();
