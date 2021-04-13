@@ -39,8 +39,9 @@ jobs:
         with:
           redis-version: ${{ matrix.redis-version }}    
 
-      - name: Cache Browsers
-        run: PLAYWRIGHT_BROWSERS_PATH=$HOME/pw-browsers yarn 
+      - name: Install dependencies and Cache Browsers    
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: PLAYWRIGHT_BROWSERS_PATH=0 yarn 
 
       - name: Use playwright actions
         uses: microsoft/playwright-github-action@v1
